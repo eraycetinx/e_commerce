@@ -1,0 +1,32 @@
+{
+  "name": "backend",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "start:dev": "nodemon ./src/server.ts",
+    "start": "node ./dist/server.js",
+    "start:drizzle": "npx drizzle-kit push",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "@types/express": "^5.0.6",
+    "@types/jsonwebtoken": "^9.0.10",
+    "dotenv": "^17.2.3",
+    "drizzle-orm": "^1.0.0-beta.12-a5629fb",
+    "express": "^5.2.1",
+    "jsonwebtoken": "^9.0.3",
+    "pg": "^8.17.1",
+    "reflect-metadata": "^0.2.2"
+  },
+  "devDependencies": {
+    "@types/node": "^25.0.8",
+    "@types/pg": "^8.16.0",
+    "drizzle-kit": "^1.0.0-beta.12-a5629fb",
+    "nodemon": "^3.1.11",
+    "tsx": "^4.21.0"
+  }
+}
