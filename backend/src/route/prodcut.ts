@@ -9,3 +9,5 @@ router.delete("/delete-product", productController.deleteProduct);
 
 router.get("/products", productController.products);
 router.get("/product/:uuid", productController.product);
+
+export default router;
