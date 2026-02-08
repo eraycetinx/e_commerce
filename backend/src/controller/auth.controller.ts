@@ -53,6 +53,7 @@ export const register = async (req: Request, res: Response) => {
         username: cleanUserName,
         email: cleanEmail,
         password: hashedPassword,
+        createdAt: Date.now().toString(),
       })
       .returning({
         uuid: usersTable.uuid,
