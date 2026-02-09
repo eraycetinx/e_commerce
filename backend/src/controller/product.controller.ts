@@ -145,6 +145,10 @@ export const deleteProduct = async (req: Request, res: Response) => {
 
     const { uuid } = req.body;
 
+    if (!uuid) {
+      return res.status(400).json({ message: "Invalid params" });
+    }
+
     const isUserOwnerProduct = await db
       .select()
       .from(productTable)

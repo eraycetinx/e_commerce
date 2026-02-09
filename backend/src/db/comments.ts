@@ -4,7 +4,7 @@ export const commentsTable = pgTable("comments", {
   uuid: uuid().primaryKey().defaultRandom().notNull(),
   content: varchar({ length: 255 }),
   rate: real().default(0.0),
-  prodcutUuid: uuid().notNull(),
+  productUuid: uuid().notNull(),
   userUuid: uuid().notNull(),
   createdAt: date(),
 });

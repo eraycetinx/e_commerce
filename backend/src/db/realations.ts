@@ -32,7 +32,7 @@ export const relations = defineRelations(
     },
     comments: {
       prodcut: r.one.products({
-        from: r.comments.prodcutUuid,
+        from: r.comments.productUuid,
         to: r.products.uuid,
       }),
       likes: r.many.like(),
