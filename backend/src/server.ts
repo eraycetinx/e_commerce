@@ -8,8 +8,9 @@ import { TokenUser } from "./utils/token";
 import auth from "./route/auth";
 import comment from "./route/comment";
 import like from "./route/like";
-import product from "./route/prodcut";
+import product from "./route/product";
 import order from "./route/orders";
+import user from "./route/user";
 
 export const db = drizzle(process.env.DATABASE_URL!, { relations });
 
@@ -31,6 +32,7 @@ app.use(comment);
 app.use(like);
 app.use(product);
 app.use(order);
+app.use(user);
 
 app.listen(port, () => {
   console.log(`Example app listening on port ${port}`);

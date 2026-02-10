@@ -1,4 +1,4 @@
-import { uuid, date, pgTable, boolean, real } from "drizzle-orm/pg-core";
+import { uuid, timestamp, pgTable, boolean, real } from "drizzle-orm/pg-core";
 
 export const orderTable = pgTable("orders", {
   uuid: uuid().defaultRandom().primaryKey().notNull(),
@@ -6,5 +6,5 @@ export const orderTable = pgTable("orders", {
   productUuid: uuid().notNull(),
   status: boolean().default(false).notNull(),
   price: real().default(0.0),
-  createdAt: date(),
+  createdAt: timestamp("createdAt").notNull().defaultNow(),
 });

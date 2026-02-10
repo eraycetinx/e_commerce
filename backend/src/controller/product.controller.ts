@@ -60,7 +60,6 @@ export const createProduct = async (req: Request, res: Response) => {
         description: finalDescription,
         price,
         sellerUuid: loggedUser.uuid,
-        createdAt: Date.now().toString(),
       })
       .returning({ uuid: productTable.uuid });
 
@@ -118,6 +117,7 @@ export const updateProduct = async (req: Request, res: Response) => {
     if (discount > 0) {
       const newPrice = price - (price * discount) / 100;
       productData.price = newPrice;
+      productData.discount = discount;
     }
 
     if (Object.keys(productData).length === 0) {

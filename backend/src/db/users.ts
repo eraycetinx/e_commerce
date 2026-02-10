@@ -1,4 +1,10 @@
-import { uuid, pgTable, varchar, date, boolean } from "drizzle-orm/pg-core";
+import {
+  uuid,
+  pgTable,
+  varchar,
+  timestamp,
+  boolean,
+} from "drizzle-orm/pg-core";
 
 export const usersTable = pgTable("users", {
   uuid: uuid().defaultRandom().primaryKey().unique().notNull(),
@@ -6,5 +12,5 @@ export const usersTable = pgTable("users", {
   email: varchar({ length: 255 }).notNull().unique(),
   password: varchar({ length: 255 }).notNull(),
   isSeller: boolean().default(false),
-  createdAt: date(),
+  createdAt: timestamp("createdAt").notNull().defaultNow(),
 });
