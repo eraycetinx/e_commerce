@@ -11,6 +11,7 @@ import like from "./route/like";
 import product from "./route/product";
 import order from "./route/orders";
 import user from "./route/user";
+import { globalErrorHandler } from "./middleware/error";
 
 export const db = drizzle(process.env.DATABASE_URL!, { relations });
 
@@ -33,6 +34,8 @@ app.use(like);
 app.use(product);
 app.use(order);
 app.use(user);
+
+app.use(globalErrorHandler);
 
 app.listen(port, () => {
   console.log(`Example app listening on port ${port}`);
