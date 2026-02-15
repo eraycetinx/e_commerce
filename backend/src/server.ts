@@ -11,6 +11,7 @@ import like from "./route/like";
 import product from "./route/product";
 import order from "./route/orders";
 import user from "./route/user";
+import store from "./route/store";
 import { globalErrorHandler } from "./middleware/error";
 
 export const db = drizzle(process.env.DATABASE_URL!, { relations });
@@ -34,6 +35,7 @@ app.use(like);
 app.use(product);
 app.use(order);
 app.use(user);
+app.use(store);
 
 app.use(globalErrorHandler);
 
