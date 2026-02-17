@@ -8,5 +8,6 @@ export const productTable = pgTable("products", {
   discount: real().default(0.0),
   rating: real().default(0),
   sellerUuid: uuid().notNull(),
+  storeUuid: uuid().notNull(),
   createdAt: timestamp("createdAt").notNull().defaultNow(),
 });
