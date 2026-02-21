@@ -5,7 +5,6 @@ import { usersTable } from "./users";
 import { productTable } from "./products";
 import { commentsTable } from "./comments";
 import { likeTable } from "./like";
-import { storeTable } from "./store";
 
 // Define relations
 // The documents are extremely clear and understandable
@@ -17,7 +16,6 @@ export const relations = defineRelations(
     products: productTable,
     comments: commentsTable,
     like: likeTable,
-    store: storeTable,
   },
   (r) => ({
     user: {
@@ -29,10 +27,6 @@ export const relations = defineRelations(
       seller: r.one.users({
         from: r.products.sellerUuid,
         to: r.users.uuid,
-      }),
-      store: r.one.store({
-        from: r.products.storeUuid,
-        to: r.store.uuid,
       }),
       comments: r.many.comments(),
     },
@@ -48,9 +42,6 @@ export const relations = defineRelations(
         from: r.like.commentUuid,
         to: r.comments.uuid,
       }),
-    },
-    store: {
-      product: r.many.products(),
     },
   }),
 );
